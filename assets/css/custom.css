@@ -1,0 +1,96 @@
+body{
+	background: rgba(241, 235, 212, 0.72);
+}
+
+.container{
+	max-width: 600px;
+}
+
+.blue_border{
+	border: thin solid #7b7476;
+}
+
+/*used to put metro  bah*/
+.content  .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.metro{
+	min-height: 80px;
+	min-width:80px;
+	border: thin solid whitesmoke;
+}
+
+.metro .logo {
+    font-size: 4em;
+    padding: 10%;
+    opacity: 0.5;
+	color: white;
+}
+
+.metro .stat{
+    color: whitesmoke;
+    font-size: 2em;
+}
+
+.metro .tagline{
+	text-align: center;
+	display: block;
+	margin-left: 50%;
+	margin-top: -8%;
+	color:#f9f7f4c2;
+	font-size: 1em;
+}
+
+/*Logo*/
+.spin-logo{
+	font-size: 30px;
+    text-align: center;
+    display: block;
+    float: right;
+    margin-right: 45%;
+
+}
+
+/*Background Colors*/
+.red{
+	background: #ff00005c;
+}
+
+.blue{
+	background: #0000ff5e;
+}
+
+.green{
+	background: #0080004a;
+}
+
+.black{
+	background: #00000052;
+}
+
+
+
+.navbar-brand{
+	background:white;
+	border: 0.01px whitesmoke solid;
+	font-size: 13px;
+	border-radius: 40px;
+}
+
+.navbar{
+	background: whitesmoke;
+	display: block
+}
+
+
+/*Bootstrap Col Reset Tweak*/
+.col-xs-6{
+
+    position: relative;
+    min-height: 1px;
+    padding-right: 2px;
+    padding-left: 2px;
+
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lairn Vue</title>
+
+<!-- CSS Framework/Misc -->
+    <link rel="stylesheet" href="/assets/bulma/css/main.css">
+    <link rel="stylesheet" href="/assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/animate/animate.min.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+
+<!-- Font Icons -->
+    <link rel="stylesheet" href="/assets/font-icons/font-awesome/css/font-awesome.css">
+ 	<link rel="stylesheet" href="/assets/font-icons/entypo/css/entypo.css">
+ 	<link rel="stylesheet" href="/assets/font-icons/entypo/css/entypo-embedded.css">
+ 	<link rel="stylesheet" href="/assets/font-icons/entypo/css/animation.css">
+
+<!-- Head Scripts -->
+    <script src='/vue/vue.js'></script>
+    <script type="text/javascript" src='/assets/jquery/jquery.min.js'></script>
+    <script src='/assets/bootstrap/bootstrap.min.js'></script>
+</head>
+
+<body style="">
+<div class="container box" id="root">
+	<section class="content box">
+		<i class="entypo-logo-db animate-spin animated fadeIn" style="font-size: 90px; text-align: center; display: block;"></i>
+        <div class="form-group">
+            <label class="label-for">Title</label>
+            <input type="text" name="title" id="title" class="form-control">
+            <label class="label-for">Note</label>
+            <textarea class="form-control" rows="5" id="note" name="note"></textarea>
+            <br/>
+            <button class="btn btn-lg primary float-right">Submit</button>
+        </div>
+	</section>
+    <section class="content box">
+        <table class="table"> 
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Title</th>
+                        <th>Created</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Quantization of Thought Energy</td>
+                        <td>23-Jan-2019 4:87AM</td>
+                        <td>
+                            <a href="#" title="Edit"><i class="fa fa-edit fa-lg" style="border: thin whitesmoke solid; border-radius: 10px; padding: 5px"></i></a>
+                            <a href="#" title="View"><i class="fa fa-book fa-lg" style="border: thin whitesmoke solid; border-radius: 10px; padding: 5px"></i></a>
+                            <a href="#" title="Delete"><i class="fa fa-trash-o fa-lg" style="border: thin whitesmoke solid; border-radius: 10px; padding: 5px"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+    </section>
+
+</div>
+<!-- Body scripts -->
+<script src='/note_app/data.js'></script>
+<script src='/note_app/app.js'></script>
+</body>
+</html>
