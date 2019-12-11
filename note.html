@@ -23,6 +23,7 @@
     <script type="text/javascript" src='/assets/jquery/jquery.min.js'></script>
     <script src='/assets/bootstrap/bootstrap.min.js'></script>
     <!-- <script src='/assets/bootstrap-vue/index.js'></script> -->
+    <script src='/assets/jquery/jquery.min.js'></script>
 </head>
 
 <body style=" min-height: 800px">
@@ -31,19 +32,21 @@
         <section>
             <header>
                <nav class="navbar navbar-light bg-light">
-                    <a class=" navbar-brand" onclick="collapse">NEW NOTE</a>
+                    <a class=" navbar-brand" @click="showAddForm">NEW NOTE</a>
                      <i class=" spin-logo entypo-logo-db animate-spin animated fadeIn"></i>
                 </nav>
             </header>
         </section>
-        <section class="box hide">
+        <section id="addForm" v-bind:class="cssBind.hide" class="box">
             <div class="form-group">
                 <label class="label-for">Title</label>
-                <input type="text" name="title" id="title" class="form-control">
+                <input v-model='notes.title' type="text" name="title" id="title" class="form-control" required="required">
                 <label class="label-for">Note</label>
-                <textarea class="form-control" rows="5" id="note" name="note"></textarea>
+                <textarea v-model='notes.note'  class="form-control" rows="5" id="note" name="note" required="required"></textarea>
                 <br/>
-                <button class="btn btn-lg primary float-right" @click="addNote()">Submit</button>
+                <button class="btn btn-md btn-primary float-right" @click="addNote">Submit</button>
+                <a class="btn btn-lg" style="float:right;" @click="hideAddForm" type=""><i class="entypo entypo-cancel-circled" style="font-size: 20px" ></i></a>
+                <p class="alert bg-danger text-warning">{{formError.data}}</p>
             </div>
         </section>
         <section class="content metrow row" id="metrow">

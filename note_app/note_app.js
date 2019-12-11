@@ -2,7 +2,9 @@ var app = new Vue({
 	el: '#root',
 	data:{
 		notes: Data,
-		message: ["Hello Dear", "How are you", "Hope you are good"]
+		message: ["Hello Dear", "How are you", "Hope you are good"],
+		cssBind: {hide:"hide"},
+		formError: {data:""},
 	},
 
 	components: {
@@ -29,12 +31,18 @@ var app = new Vue({
 		addNote(){
 			const note = {
 				id: this.notes.length +1,
-				title: "New Push Note",
-				content: "This is a new note created using the addNite Method",
-				created: "12/23/2019",
+				title: this.notes.title,
+				content: this.notes.note,
+				created: Date.now(),
 			}
-			this.notes.push(note);
-			localStorage.setItem('notes', JSON.stringify(this.notes));
+			// to prevent creating empty items
+			if(this.notes.title && this.notes.note){
+				this.notes.push(note);
+				localStorage.setItem('notes', JSON.stringify(this.notes));
+			} else{
+				this.formError.data = "Please fill all relevant fields";
+			};
+			
 		},
 
 		removeNote(id){
@@ -42,6 +50,14 @@ var app = new Vue({
 			const noted = this.notes;
 			noted.splice(index,1);
 			localStorage.setItem('notes', JSON.stringify(this.notes));	
+		},
+
+		showAddForm(){
+			this.cssBind.hide = "show";
+		},
+
+		hideAddForm(){
+			this.cssBind.hide = "hide";
 		},
 
 		// Format text before output on the view side, 
