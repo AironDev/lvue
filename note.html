@@ -44,6 +44,16 @@
                 <label class="label-for">Note</label>
                 <textarea v-model='notes.note'  class="form-control" rows="5" id="note" name="note" required="required"></textarea>
                 <br/>
+                <div class="row form-group">
+                    <label class="col-md-2"> Tag</label>
+                    <div class="col-md-10">
+                        <span class="tags"><input type="checkbox" name=""  class=""><p>Book</p></span>
+                        <span class="tags"><input type="checkbox" name=""  class=""><p>Todo</p></span>
+                        <span class="tags"><input type="checkbox" name=""  class=""><p>Event</p></span>
+                        <span class="tags"><input type="checkbox" name=""  class=""><p>Note</p></span>
+                    </div>
+                </div>
+                <br/>
                 <button class="btn btn-md btn-primary float-right" @click="addNote">Submit</button>
                 <a class="btn btn-lg" style="float:right;" @click="hideAddForm" type=""><i class="entypo entypo-cancel-circled" style="font-size: 20px" ></i></a>
                 <p class="alert bg-danger text-warning">{{formError.data}}</p>
@@ -52,30 +62,30 @@
         <section class="content metrow row" id="metrow">
             <div class="col-md-3 col-xs-6">
                 <div class="metro red">
-                    <i class="fa fa-book logo"></i>
+                    <i class="fa fa-bookmark logo"></i>
                     <span class="stat">13</span>
                     <span class="tagline">Notes</span>
                 </div>
             </div>
             <div class="col-md-3 col-xs-6">
                 <div class="metro blue">
-                    <i class="fa fa-user logo"></i>
-                    <span class="stat">13</span>
-                    <span class="tagline">notes</span>
+                    <i class="fa fa-book logo"></i>
+                    <span class="stat">3</span>
+                    <span class="tagline">Books</span>
                 </div>
             </div>
             <div class="col-md-3 col-xs-6">
                 <div class="metro black">
-                    <i class="fa fa-user logo"></i>
-                    <span class="stat">13</span>
-                    <span class="tagline">13</span>
+                    <i class="fa fa-ticket logo"></i>
+                    <span class="stat">10</span>
+                    <span class="tagline">Events</span>
                 </div>
             </div>
             <div class="col-md-3 col-xs-6">
                 <div class="metro green">
-                    <i class="fa fa-user logo"></i>
-                    <span class="stat">13</span>
-                    <span class="tagline">notes</span>
+                    <i class="fa fa-archive logo"></i>
+                    <span class="stat">7</span>
+                    <span class="tagline">Todo</span>
                 </div>
             </div>
         </section>

@@ -5,8 +5,28 @@ const Data = [
 		note: 'Its been long I ate egusi soup, so I feeel its a high time I prepare a delicous meal, hopefully tommoro.',
 		url: '#',
 		created: "2/11/2019",
-		image: '/assets/images/layout.png',
-		key: ""
+		key: "",
+		tag:"",
+		book: [{
+			title: "",
+			author: "",
+			chapter: "",
+			page: "",
+		}],
+		event: [{
+			venue: "",
+			date: "",
+			time: "",
+			role: "",
+			status: "",
+		}],
+		todo: [{
+			status: "",
+			priority:"",
+		}],
+		note: [{
+
+		}]
 	},
 
 	{

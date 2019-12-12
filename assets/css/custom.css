@@ -92,5 +92,18 @@ body{
     min-height: 1px;
     padding-right: 2px;
     padding-left: 2px;
-
 }
+
+.tags{
+    align-items: center;
+    background-color: whitesmoke;
+    padding-left: 2em;
+    padding-right: 2em;
+    white-space: nowrap;
+    display: inline-flex;
+}
+
+.tags p {
+    margin: 6px 5px 0;
+}
+
