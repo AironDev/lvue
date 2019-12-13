@@ -32,11 +32,12 @@ var app = new Vue({
 			const note = {
 				id: this.notes.length +1,
 				title: this.notes.title,
-				content: this.notes.note,
+				content: this.notes.content,
 				created: Date.now(),
+				tag: this.tag,
 			}
 			// to prevent creating empty items
-			if(this.notes.title && this.notes.note){
+			if(this.notes.title && this.notes.content){
 				this.notes.push(note);
 				localStorage.setItem('notes', JSON.stringify(this.notes));
 			} else{
@@ -70,6 +71,27 @@ var app = new Vue({
 				case type = 'currency':
 					break;
 			}		
+		},
+
+		filterTag(tag){
+			switch(tag){
+				case tag = "Books":
+					const Books = this.notes.filter((value, index) => value.tag == "Book");
+					return Books;
+				break;
+				case tag = "Events":
+					const Events = this.notes.filter((value, index) => value.tag == "Event");
+					return Events;
+				break;
+				case tag = "Todos":
+					const Todos = this.notes.filter((value, index) => value.tag == "Todo");
+					return Todos;
+				break;
+				case tag = "Bookmarks":
+					const Bookmarks = this.notes.filter((value, index) => value.tag == "Bookmark");
+					return Bookmarks;
+				break;
+			}	
 		}
 	},
 });

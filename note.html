@@ -42,15 +42,15 @@
                 <label class="label-for">Title</label>
                 <input v-model='notes.title' type="text" name="title" id="title" class="form-control" required="required">
                 <label class="label-for">Note</label>
-                <textarea v-model='notes.note'  class="form-control" rows="5" id="note" name="note" required="required"></textarea>
+                <textarea v-model='notes.content'  class="form-control" rows="5" id="content" name="content" required="required"></textarea>
                 <br/>
-                <div class="row form-group">
-                    <label class="col-md-2"> Tag</label>
-                    <div class="col-md-10">
-                        <span class="tags"><input type="checkbox" name=""  class=""><p>Book</p></span>
-                        <span class="tags"><input type="checkbox" name=""  class=""><p>Todo</p></span>
-                        <span class="tags"><input type="checkbox" name=""  class=""><p>Event</p></span>
-                        <span class="tags"><input type="checkbox" name=""  class=""><p>Note</p></span>
+                <div class="row">
+                    <label for="tag" class="col-md-2" > Tag</label>
+                    <div class="col-md-10 form-group">
+                        <span class="tags"><input type="radio" name="tag" v-model="tag" id="book" value="Book"  class=""><p>Book</p></span>
+                        <span class="tags"><input type="radio" name="tag" v-model="tag" id="todo"  value="Todo" class=""><p>Todo</p></span>
+                        <span class="tags"><input type="radio" name="tag" v-model="tag" id="event" value="Event"  class=""><p>Event</p></span>
+                        <span class="tags"><input type="radio" name="tag" v-model="tag" id="note" value="Bookmark"  class=""><p>Bookmark</p></span>
                     </div>
                 </div>
                 <br/>
@@ -63,28 +63,28 @@
             <div class="col-md-3 col-xs-6">
                 <div class="metro red">
                     <i class="fa fa-bookmark logo"></i>
-                    <span class="stat">13</span>
-                    <span class="tagline">Notes</span>
+                    <span class="stat">{{filterTag("Bookmarks").length}}</span>
+                    <span class="tagline">Bookamrks</span>
                 </div>
             </div>
             <div class="col-md-3 col-xs-6">
                 <div class="metro blue">
                     <i class="fa fa-book logo"></i>
-                    <span class="stat">3</span>
+                    <span class="stat">{{filterTag("Books").length}}</span>
                     <span class="tagline">Books</span>
                 </div>
             </div>
             <div class="col-md-3 col-xs-6">
                 <div class="metro black">
                     <i class="fa fa-ticket logo"></i>
-                    <span class="stat">10</span>
+                    <span class="stat">{{filterTag("Events").length}}</span>
                     <span class="tagline">Events</span>
                 </div>
             </div>
             <div class="col-md-3 col-xs-6">
                 <div class="metro green">
                     <i class="fa fa-archive logo"></i>
-                    <span class="stat">7</span>
+                    <span class="stat">{{filterTag("Todos").length}}</span>
                     <span class="tagline">Todo</span>
                 </div>
             </div>
@@ -95,14 +95,16 @@
                         <tr>
                             <th>S/N</th>
                             <th>Title</th>
+                            <th>Tag</th>
                             <th class="negative">Created</th>
-                            <th>Actions</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody v-for="(note, key) in notes">
                         <tr>
                             <td>{{key+1}}</td>
                             <td>{{note.title}}</td>
+                            <td>{{note.tag}}</td>
                             <td>{{format(note.created, 'date')}}</td>
                             <td>
                                 <a href="#" title="Edit"><i class="fa fa-edit fa-sm" style="border: thin whitesmoke solid; border-radius: 10px; padding: 5px"></i></a>
