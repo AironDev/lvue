@@ -97,8 +97,8 @@ body{
 .tags{
     align-items: center;
     background-color: whitesmoke;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
     white-space: nowrap;
     display: inline-flex;
 }
